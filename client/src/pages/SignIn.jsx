@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { signInstart, signInSuccess, signInFailure } from '../redux/user/userSlice';
+import OAuth from '../components/OAuth';
 
 
 export default function SignIn() {
@@ -57,6 +58,7 @@ export default function SignIn() {
         <input type='password' placeholder='password'className='border p-3 rounded-lg' id='password'  onChange={handleChange}/>
       <button disabled={loading} className='bg-red-600 text-black p-3 
       rounded-lg uppercase hover:opacity-85 disabled:opacity-65'>{loading ? 'loading...' : 'sign in'}</button>
+      <OAuth/>
       </form>
       <div className='flex gap-3 mt-7'>
         <p>Don't have an account?</p>
